@@ -1,5 +1,5 @@
 import sys #it provide access to functions and variables from python 
-import logging
+from logger import logging
 
 def error_message_detail(error, error_detail:sys): # Error message  (Exception), error detail calls for sys.exc_info()
 
@@ -24,9 +24,11 @@ class CustomException(Exception): # defining custom exception
     def __str__(self):
         return self.error_message # ensures that the specific error message is generated 
 
+
+
 ''''  
 Testing purpose: 
-  
+
 if __name__ == "__main__":  # ensures that this statement is only triggered when we run in directly, not when imported by other scripts
     try:
         1 / 0
