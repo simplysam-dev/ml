@@ -13,7 +13,7 @@ LOG_FILE_PATH = os.path.join(logs_path, LOG_FILE) # combining it together
 logging.basicConfig(
     filename=LOG_FILE_PATH, # tells python where to save the log file
     format="[%(asctime)s] %(lineno)d %(name)s - %(levelname)s - %(message)s", # what should be the format of log message 
-                                                                     #(timestamp, line number, name of logger, log leve (eg. ERROR), actual message)
+                                                                     #(timestamp, line number, name of logger, log level (eg. ERROR), actual message)
     level=logging.INFO, #Only logs with severity level INFO or higher
 
 )
