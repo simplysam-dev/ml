@@ -1,7 +1,7 @@
 import os # for file/directory management
 import sys # give access to system specific functions like custom exceptions
-from src.exception import CustomException # custom class to handle errors
-from src.logger import logging  # to record info/errors
+from src.exception import CustomException
+from src.logger import logging
 import pandas as pd # for data manipulation
 from sklearn.model_selection import train_test_split # for train test split
 from dataclasses import dataclass # simplifies class definitions used to store config
@@ -17,12 +17,12 @@ class DataIngestionConfig:
 # This ensures that the rest of the class has access to all file paths easily
 class DataIngestion:
     def __init__(self):
-        self.ingestion_config=DataIngestionConfig()
+        self.ingestion_config=DataIngestionConfig()  
 
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component") # Logs that ingestion has started
         try:
-            df=pd.read_csv('notebook\data\stud.csv') # reading the CSV file in DataFrame format
+            df=pd.read_csv('Notebooks\data\stud.csv') # reading the CSV file in DataFrame format
             logging.info('Read the dataset as dataframe') # Logging the event
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True) # create artifact folder if it doesn't exist
