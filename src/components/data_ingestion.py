@@ -22,7 +22,8 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component") # Logs that ingestion has started
         try:
-            df=pd.read_csv('Notebooks\data\stud.csv') # reading the CSV file in DataFrame format
+            data_path = os.path.join(os.getcwd(), "Notebooks", "data", "stud.csv")
+            df = pd.read_csv(data_path) # reading the CSV file in DataFrame format
             logging.info('Read the dataset as dataframe') # Logging the event
 
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path),exist_ok=True) # create artifact folder if it doesn't exist
@@ -36,7 +37,7 @@ class DataIngestion:
 
             test_set.to_csv(self.ingestion_config.test_data_path,index=False,header=True) # saving into specific file
 
-            logging.info("Inmgestion of the data iss completed") 
+            logging.info("Ingestion of the data is completed") 
 
             return(
                 self.ingestion_config.train_data_path,

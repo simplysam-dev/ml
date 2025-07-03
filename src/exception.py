@@ -1,5 +1,5 @@
 import sys #it provide access to functions and variables from python 
-from logger import logging
+from src.logger import logging  # always ensure that you import like this (from folder name.file name import function)
 
 def error_message_detail(error, error_detail:sys): # Error message  (Exception), error detail calls for sys.exc_info()
 
