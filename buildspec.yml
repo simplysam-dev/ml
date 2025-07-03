@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.10
+    commands:
+      - pip install -r requirements.txt
+
+  build:
+    commands:
+      - zip -r app.zip .  # zip everything into one artifact
+
+artifacts:
+  files:
+    - app.zip
